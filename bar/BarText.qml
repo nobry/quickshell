@@ -4,7 +4,6 @@ import Quickshell.Widgets
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Effects
-import Qt5Compat.GraphicalEffects
 
 Text {
   property string mainFont: "FiraCode"
@@ -31,11 +30,13 @@ Text {
     font: parent.font
   }
 
-  DropShadow {
-    anchors.fill: parent
-    horizontalOffset: 1
-    verticalOffset: 1
-    color: "#000000"
+  MultiEffect {
+    shadowEnabled: true
+    shadowColor: "black"
+    shadowHorizontalOffset:1 
+    shadowVerticalOffset: 1
+    shadowBlur: 1.0
+    anchors.fill: textcopy
     source: textcopy
   }
 

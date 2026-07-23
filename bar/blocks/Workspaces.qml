@@ -3,7 +3,7 @@ import QtQuick.Layouts
 import Quickshell
 import Quickshell.Hyprland
 import Quickshell.Widgets
-import Qt5Compat.GraphicalEffects
+import QtQuick.Effects
 import "../utils" as Utils
 import "root:/"
 
@@ -51,14 +51,14 @@ RowLayout {
                         color: "white"
                     }
 
-                    DropShadow {
+                    MultiEffect {
+			shadowEnabled: true
+			shadowColor: "black"
+			shadowHorizontalOffset: 2
+			shadowVerticalOffset: 2
+			shadowBlur: 0.5
                         visible: focused
                         anchors.fill: workspaceText
-                        horizontalOffset: 2
-                        verticalOffset: 2
-                        radius: 8.0
-                        samples: 20
-                        color: "#000000"
                         source: workspaceText
                     }
 
