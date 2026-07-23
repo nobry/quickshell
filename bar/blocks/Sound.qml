@@ -40,8 +40,8 @@ BarBlock {
     }
 
     Process {
-        id: pavucontrol
-        command: ["pavucontrol"]
+        id: audiocontrol
+        command: ["pwvucontrol"]
         running: false
     }
 
@@ -134,7 +134,7 @@ BarBlock {
                     Repeater {
                         model: [
                             { text: sink?.audio?.muted ? "Unmute" : "Mute", action: () => sink?.audio && (sink.audio.muted = !sink.audio.muted) },
-                            { text: "Pavucontrol", action: () => { pavucontrol.running = true; menuWindow.visible = false } }
+                            { text: "Audio Control", action: () => { audiocontrol.running = true; menuWindow.visible = false } }
                         ]
 
                         Rectangle {
